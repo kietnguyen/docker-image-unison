@@ -66,7 +66,7 @@ if [ "$1" == 'supervisord' ]; then
 	###################  now unison specific ###################
 	################### ################### ###################
 	# Increase the maximum watches for inotify for very large repositories to be watched
-	# Needs the privilegied docker option
+	# Needs the privileged docker option
 	[ ! -z ${MAX_INOTIFY_WATCHES} ] && echo fs.inotify.max_user_watches=${MAX_INOTIFY_WATCHES} | tee -a /etc/sysctl.conf && sysctl -p || true
 
 	MONIT_ENABLE=${MONIT_ENABLE:-false}
